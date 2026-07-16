@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Yangzi Power - Professional Battery Charger Manufacturer">
   <title>Yangzi Power | Battery Charger Manufacturer</title>
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
   <style>
     :root {
       --primary: #1a3c5e; --primary-light: #2a5a8a;
@@ -361,6 +362,17 @@
         const body = Array.from(fd.entries()).map(([k,v]) => k+': '+v).join('\n');
         window.location.href = 'mailto:yangzip45@gmail.com?subject=Inquiry from yangzipower.com&body=' + encodeURIComponent(body);
         alert('Email client opened. Please send the email — we will reply within 3 hours.');
+      });
+    }
+  </script>
+  <script>
+    if (window.netlifyIdentity) {
+      window.netlifyIdentity.on("init", user => {
+        if (!user) {
+          window.netlifyIdentity.on("login", () => {
+            document.location.href = "/admin/";
+          });
+        }
       });
     }
   </script>
