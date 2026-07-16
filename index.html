@@ -376,6 +376,10 @@
             });
           }
         });
+        // 强制检测 recovery_token 并开启对话框
+        if (window.location.hash.includes("recovery_token")) {
+          window.netlifyIdentity.open("recovery");
+        }
       }
     });
   </script>
