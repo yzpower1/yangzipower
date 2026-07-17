@@ -359,10 +359,13 @@
         e.preventDefault();
         const fd = new FormData(form);
         const body = Array.from(fd.entries()).map(([k,v]) => k+': '+v).join('\n');
-        window.location.href = 'mailto:yangzip45@gmail.com?subject=Inquiry from yangzipower.com&body=' + encodeURIComponent(body);
-        alert('Email client opened. Please send the email — we will reply within 3 hours.');
+        const mailtoUrl = 'mailto:yangzip45@gmail.com?subject=Inquiry from yangzipower.com (' + s.companyName + ')&body=' + encodeURIComponent(body);
+        window.location.href = mailtoUrl;
+        alert('Email client opened. Please send the email to Yangzi Power — we will reply within 3 hours.');
       });
     }
   </script>
 </body>
+</html>
+
 </html>
